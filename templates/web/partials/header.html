@@ -54,28 +54,23 @@
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item dropdown">
                     <a class="nav-link" href="{% url "web:index" %}" role="button">Home</a>
-                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="index.html">Main Home</a>
-                        <a class="dropdown-item" href="index.html">Architecture</a>
-                        <a class="dropdown-item" href="index.html">Interior Design</a>
-                    </div> 
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{% url "web:about" %}">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="portfolio-mas2.html">Portfolio</a>
+                    <a class="nav-link" href="{% url "web:portfolio" %}">Portfolio</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
                         aria-haspopup="true" aria-expanded="false">Blog</a>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="blog.html">Blogs</a>
-                        <a class="dropdown-item" href="blog-details.html">Post Details</a>
+                        <a class="dropdown-item" href="{% url "web:blog" %}">Blogs</a>
+                        <a class="dropdown-item" href="{% url "web:blog-detail" %}">Post Details</a>
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="contact.html">Contact</a>
+                    <a class="nav-link" href="{% url "web:contact" %}">Contact</a>
                 </li>
             </ul>
             <div class="social-icon">
