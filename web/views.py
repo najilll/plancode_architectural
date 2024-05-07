@@ -19,3 +19,19 @@ class IndexView(TemplateView):
 
 class AboutView(TemplateView):
     template_name = "web/about.html"
+
+
+class ContactView(TemplateView):
+    template_name = "web/contact.html"
+
+
+class PortfolioView(TemplateView):
+    template_name = "web/portfolio.html"
+
+
+class BlogView(TemplateView):
+    template_name = "web/blog.html"
+
+
+class BlogdetailView(TemplateView):
+    template_name = "web/blog-details.html"

@@ -13,29 +13,28 @@
 $(function () {
 
     "use strict";
-
+  
 
     /* ===============================  Navbar Menu  =============================== */
 
-    var wind = $(window);
+var wind = $(window);
 
-    wind.on("scroll", function () {
-
-        var bodyScroll = wind.scrollTop(),
-            navbar = $(".navbar.change"),
-            logo = $(".navbar.change .logo> img");
-
-        if (bodyScroll > 300) {
-
-            navbar.addClass("nav-scroll");
-            logo.attr('src', 'img/logo-dark.png');
-
-        } else {
-
-            navbar.removeClass("nav-scroll");
-            logo.attr('src', 'img/logo-light.png');
-        }
-    });
+wind.on("scroll", function () {
+    var bodyScroll = wind.scrollTop(),
+        navbar = $(".navbar.change"),
+        logo = $("#navbar-logo");
+    
+    if (bodyScroll > 300) {
+        navbar.addClass("nav-scroll");
+        logo.attr('src', '/static/web/img/Frame 1.png');
+        console.log("set") // Update the logo path directly
+    } else {
+        navbar.removeClass("nav-scroll");
+        logo.attr('src', '/static/web/img/Frame 2.png');
+        console.log("not set") // Update the logo path directly
+    }
+});
+    
 
     $('.navbar .search .icon').on('click', function () {
         $(".navbar .search .search-form").fadeIn();
