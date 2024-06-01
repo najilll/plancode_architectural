@@ -97,29 +97,17 @@
         </div>
         <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-6 map-box">
+                {% comment %} <div class="col-lg-6 map-box">
                     <div class="map" id="ieatmaps"></div>
-                </div>
+                </div> {% endcomment %}
                 <div class="col-lg-6 form">
-                    <form id="contact-form" method="post" action="https://ui-themez.smartinnovates.net/items/archo/contact.php">
-
-                        <div class="messages"></div>
-
+                    <form method="POST" class="ajax redirect" data-redirect="/">
                         <div class="controls">
-
-                            <div class="form-group">
-                                <input id="form_name" type="text" name="name" placeholder="Name" required="required">
-                            </div>
-
-                            <div class="form-group">
-                                <input id="form_email" type="email" name="email" placeholder="Email"
-                                    required="required">
-                            </div>
-
-                            <div class="form-group">
-                                <textarea id="form_message" name="message" placeholder="Message" rows="4"
-                                    required="required"></textarea>
-                            </div>
+                                {% csrf_token %}
+                                {{ form.name }}
+                                {{ form.email }}
+                                {{ form.phone_number }}
+                                {{ form.message }}
 
                             <button type="submit" class="btn-curve btn-color"><span>Send Message</span></button>
                         </div>
@@ -133,3 +121,7 @@
 
 
     {% endblock %}
+{% block js %}
+<script src="{% static "web/js/sweetalert2.all.min.js" %}"></script>
+<script src="{% static "web/js/ajax.js" %}"></script>
+{% endblock js %}

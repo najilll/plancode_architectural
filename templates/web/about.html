@@ -41,7 +41,7 @@
 
     <!-- ==================== Start Header ==================== -->
 
-    <header class="pages-header bg-img valign parallaxie" data-background="img/pg1.jpg" data-overlay-dark="5">
+    <header class="pages-header bg-img valign parallaxie" data-background="{% static "web/img/blog/b2.jpg" %}" data-overlay-dark="5">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -214,7 +214,7 @@
 
 
     <!-- ==================== Start Testimonials ==================== -->
-
+    {% if testimonial %}
     <section class="testimonials grid section-padding bg-img parallaxie" data-background="img/001.jpg" data-overlay-dark="9">
         <div class="container">
             <div class="section-head text-center">
@@ -228,66 +228,21 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="testim">
+                        {% for t in testimonial %}
                         <div class="item">
-                            <span class="quote-icon"><img src="img/clients/quote.svg" alt=""></span>
+                            <span class="quote-icon"><img src="{% static 'web/img/clients/quote.svg'%}" alt=""></span>
                             <div class="cont">
-                                <p class="playfont">"I just love their design for all stunning details. You must know
-                                    what can you do for a project before taking it, but with Archo, the sky is the
-                                    limit."
+                                <p class="playfont">{{t.description}}
                                 </p>
                             </div>
                             <div class="info">
                                 <div class="author">
-                                    <img src="img/clients/1.jpg" alt="">
+                                    <img src="{{t.image.url}}" alt="">
                                 </div>
-                                <h6>Mitchl Jhon <span>Envato Customer</span> </h6>
+                                <h6>{{t.name}} <span>Client</span> </h6>
                             </div>
                         </div>
-                        <div class="item">
-                            <span class="quote-icon"><img src="img/clients/quote.svg" alt=""></span>
-                            <div class="cont">
-                                <p class="playfont">"I just love their design for all stunning details. You must know
-                                    what can you do for a project before taking it, but with Archo, the sky is the
-                                    limit."
-                                </p>
-                            </div>
-                            <div class="info">
-                                <div class="author">
-                                    <img src="img/clients/2.jpg" alt="">
-                                </div>
-                                <h6>Jane Smith <span>Envato Customer</span> </h6>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <span class="quote-icon"><img src="img/clients/quote.svg" alt=""></span>
-                            <div class="cont">
-                                <p class="playfont">"I just love their design for all stunning details. You must know
-                                    what can you do for a project before taking it, but with Archo, the sky is the
-                                    limit."
-                                </p>
-                            </div>
-                            <div class="info">
-                                <div class="author">
-                                    <img src="img/clients/3.jpg" alt="">
-                                </div>
-                                <h6>Alison Clutcher <span>Envato Customer</span> </h6>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <span class="quote-icon"><img src="img/clients/quote.svg" alt=""></span>
-                            <div class="cont">
-                                <p class="playfont">"I just love their design for all stunning details. You must know
-                                    what can you do for a project before taking it, but with Archo, the sky is the
-                                    limit."
-                                </p>
-                            </div>
-                            <div class="info">
-                                <div class="author">
-                                    <img src="img/clients/4.jpg" alt="">
-                                </div>
-                                <h6>Peter Jefferson <span>Envato Customer</span> </h6>
-                            </div>
-                        </div>
+                        {% endfor %}
                     </div>
                     <div class="navs mt-30">
                         <span class="prev">
@@ -301,13 +256,15 @@
             </div>
         </div>
     </section>
-
+    {% else %}
+    {% endif %}
+    
     <!-- ==================== End Testimonials ==================== -->
 
 
 
     <!-- ==================== Start Team ==================== -->
-
+    {% if employees %}
     <section class="team tmgrid section-padding">
         <div class="container">
             <div class="section-head text-center">
@@ -319,70 +276,23 @@
                 </div>
             </div>
             <div class="row">
+                {% for e in employees %}
                 <div class="item col-lg-3 col-md-6">
                     <div class="img">
-                        <img src="img/team/1.jpg" alt="">
-                        <div class="social">
-                            <a href="#0"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#0"><i class="fab fa-twitter"></i></a>
-                            <a href="#0"><i class="fab fa-behance"></i></a>
-                            <a href="#0"><i class="fab fa-linkedin-in"></i></a>
-                        </div>
+                        <img src="{{e.image.url}}" alt="">
                     </div>
                     <div class="info">
-                        <h5>Hasib sharif</h5>
-                        <span>General Manager</span>
+                        <h5>{{e.name}}</h5>
+                        <span>{{e.position}}</span>
                     </div>
                 </div>
-                <div class="item col-lg-3 col-md-6">
-                    <div class="img">
-                        <img src="img/team/3.jpg" alt="">
-                        <div class="social">
-                            <a href="#0"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#0"><i class="fab fa-twitter"></i></a>
-                            <a href="#0"><i class="fab fa-behance"></i></a>
-                            <a href="#0"><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-                    <div class="info">
-                        <h5>Leio Man</h5>
-                        <span>Founder</span>
-                    </div>
-                </div>
-                <div class="item col-lg-3 col-md-6">
-                    <div class="img">
-                        <img src="img/team/2.jpg" alt="">
-                        <div class="social">
-                            <a href="#0"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#0"><i class="fab fa-twitter"></i></a>
-                            <a href="#0"><i class="fab fa-behance"></i></a>
-                            <a href="#0"><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-                    <div class="info">
-                        <h5>Jonson Leo</h5>
-                        <span>Founder</span>
-                    </div>
-                </div>
-                <div class="item col-lg-3 col-md-6">
-                    <div class="img">
-                        <img src="img/team/4.jpg" alt="">
-                        <div class="social">
-                            <a href="#0"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#0"><i class="fab fa-twitter"></i></a>
-                            <a href="#0"><i class="fab fa-behance"></i></a>
-                            <a href="#0"><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-                    <div class="info">
-                        <h5>Robert Front</h5>
-                        <span>CEO Founder</span>
-                    </div>
-                </div>
+                {% endfor %}
+                
             </div>
         </div>
     </section>
-
+    {% else %}
+    {% endif %}
     <!-- ==================== End Team ==================== -->
 
 

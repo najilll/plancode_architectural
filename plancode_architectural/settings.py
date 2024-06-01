@@ -25,7 +25,8 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "web",
-    "import_export"
+    "import_export",
+    'tinymce',
 ]
 
 X_FRAME_OPTIONS = "SAMEORIGIN"

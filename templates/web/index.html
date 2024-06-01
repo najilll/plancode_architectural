@@ -107,7 +107,7 @@
             <div class="row">
 
                 <div class="col-lg-4">
-                    <div class="item-bx bg-img wow fadeInUp" data-wow-delay=".3s" data-background="img/01.jpg">
+                    <div class="item-bx bg-img wow fadeInUp" data-wow-delay=".3s" data-background="{% static "web/img/01.jpg" %}">
                         <span class="icon flaticon-houses"></span>
                         <h6 class="mb-20">Architecture</h6>
                         <p>Cras mollis turpis a ipsum ultes, nec cond imentum ipsum consequat.</p>
@@ -116,7 +116,7 @@
                 </div>
 
                 <div class="col-lg-4">
-                    <div class="item-bx bg-img wow fadeInUp" data-wow-delay=".5s" data-background="img/02.jpg">
+                    <div class="item-bx bg-img wow fadeInUp" data-wow-delay=".5s" data-background="{% static "web/img/02.jpg" %}">
                         <span class="icon flaticon-living-room"></span>
                         <h6 class="mb-20">Interior Design</h6>
                         <p>Cras mollis turpis a ipsum ultes, nec cond imentum ipsum consequat.</p>
@@ -125,7 +125,7 @@
                 </div>
 
                 <div class="col-lg-4">
-                    <div class="item-bx bg-img wow fadeInUp" data-wow-delay=".7s" data-background="img/03.jpg">
+                    <div class="item-bx bg-img wow fadeInUp" data-wow-delay=".7s" data-background="{% static "web/img/03.jpg" %}">
                         <span class="icon flaticon-interior-design"></span>
                         <h6 class="mb-20">3D Modeling</h6>
                         <p>Cras mollis turpis a ipsum ultes, nec cond imentum ipsum consequat.</p>
@@ -164,8 +164,8 @@
                                 <div class="content wow fadeInUp" data-wow-delay=".3s">
                                     <div class="item-img bg-img wow imago" data-background="{{p.background_image.url}}"></div>
                                     <div class="cont">
-                                        <h6><a href="#">{{p.sub_title}}</a></h6>
-                                        <h4><a href="#">{{p.title}}</a></h4>
+                                        <h6><a href="{{p.get_absolute_url}}">{{p.sub_title}}</a></h6>
+                                        <h4><a href="{{p.get_absolute_url}}">{{p.title}}</a></h4>
                                     </div>
                                 </div>
                             </div>
@@ -215,8 +215,8 @@
                 </div>
             </div>
         </div>
-        <div class="bg-img pat valign text-center" data-background="img/pat1.png">
-            <a class="play-button color vid wow fadeInUp" data-wow-delay=".7s" href="https://youtu.be/AzwC6umvd1s">
+        <div class="bg-img pat valign text-center" data-background="{% static "web/img/pat1.png" %}">
+            <a class="play-button color vid wow fadeInUp" data-wow-delay=".7s" href="{% static "web/img/TRAD01.mp4" %}">
                 <svg class="circle-fill">
                     <circle cx="43" cy="43" r="39" stroke="#b19777" stroke-width=".5"></circle>
                 </svg>
@@ -239,7 +239,7 @@
 
     {% if transformation %}
     <section class="after-before section-padding">
-        <div class="background bg-img parallaxie" data-background="{% static "web/img/04.jpg" %}" data-overlay-dark="7"></div>
+        <div class="background bg-img parallaxie" data-background="{% static "web/img/01.jpg" %}" data-overlay-dark="7"></div>
         <div class="container ontop">
             <div class="section-head text-center wow fadeInUp" data-wow-delay=".3s">
                 <div class="row justify-content-center">

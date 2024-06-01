@@ -7,5 +7,8 @@ urlpatterns = [
     path("contact/",views.ContactView.as_view(), name="contact"),
     path("portfolio/",views.PortfolioView.as_view(), name="portfolio"),
     path("blog/",views.BlogView.as_view(), name="blog"),
-    path("blog-detail/",views.BlogdetailView.as_view(), name="blog-detail"),
+    path("blog-detail/<slug:slug>/",views.BlogdetailView.as_view(), name="blog-detail"),
+    path("portfolio-detail/<slug:slug>/", views.Portfolio_DetailView.as_view(), name="portfolio-details"),
+    path("blog-detail/<slug:slug>/", views.Portfolio_DetailView.as_view(), name="blog-details"),
+
 ]

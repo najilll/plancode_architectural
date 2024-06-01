@@ -36,7 +36,7 @@
 
     <!-- ==================== Start Slider ==================== -->
 
-    <header class="pages-header work-header bg-img valign" data-background="img/009.png" data-overlay-light="9">
+    <header class="pages-header work-header bg-img valign" data-background="{% static "web/img/2.jpg" %}" data-overlay-light="4">
         <div class="container">
             <div class="section-head text-center mb-0">
                 <div class="row justify-content-center">
@@ -58,181 +58,36 @@
     <section class="portfolio section-padding">
         <div class="container">
             <div class="row">
-
                 <!-- filter links -->
                 <div class="filtering text-center col-12">
                     <div class="filter box">
                         <span data-filter='*' class="active">All</span>
-                        <span data-filter='.interior'>Interior</span>
-                        <span data-filter='.theaters'>Theaters</span>
-                        <span data-filter='.residential'>Residential</span>
+                        {% for category in category %}
+                            <span data-filter='.{{ category.title|lower }}'>{{ category.title }}</span>
+                        {% endfor %}
                     </div>
                 </div>
-
+    
                 <!-- gallery -->
                 <div class="gallery twsty inf-lit full-width">
-
-                    <!-- gallery item -->
-                    <div class="items theaters three-column mt-50">
-                        <div class="item-img bg-img" data-background="img/portfolio/mas/01.jpg">
-                            <a href="project-details2.html">
-                                <div class="item-img-overlay"></div>
-                            </a>
+                    {% for item in portfolio %}
+                        <div class="items {{ item.category.title|lower }} three-column mt-50">
+                            <div class="item-img bg-img" data-background="{{ item.background_image.url }}">
+                                <a href="{{item.get_absolute_url}}">
+                                    <div class="item-img-overlay"></div>
+                                </a>
+                            </div>
+                            <div class="info mt-10">
+                                <h5>{{ item.title }}</h5>
+                                <span>{{ item.category.title }}</span>
+                            </div>
                         </div>
-                        <div class="info mt-10">
-                            <h5>Fantastic interior</h5>
-                            <span>Interior Design</span>
-                        </div>
-                    </div>
-
-                    <!-- gallery item -->
-                    <div class="items theaters three-column mt-50">
-                        <div class="item-img bg-img" data-background="img/portfolio/mas/02.jpg">
-                            <a href="project-details2.html">
-                                <div class="item-img-overlay"></div>
-                            </a>
-                        </div>
-                        <div class="info mt-10">
-                            <h5>Fantastic interior</h5>
-                            <span>Interior Design</span>
-                        </div>
-                    </div>
-
-                    <!-- gallery item -->
-                    <div class="items interior three-column mt-50">
-                        <div class="item-img bg-img" data-background="img/portfolio/mas/03.jpg">
-                            <a href="project-details2.html">
-                                <div class="item-img-overlay valign"></div>
-                            </a>
-                        </div>
-                        <div class="info mt-10">
-                            <h5>Choose Your Dream</h5>
-                            <span>Architecture</span>
-                        </div>
-                    </div>
-
-                    <!-- gallery item -->
-                    <div class="items residential three-column mt-50">
-                        <div class="item-img bg-img" data-background="img/portfolio/mas/04.jpg">
-                            <a href="project-details2.html">
-                                <div class="item-img-overlay valign"></div>
-                            </a>
-                        </div>
-                        <div class="info mt-10">
-                            <h5>Luxury Villa</h5>
-                            <span>Architecture</span>
-                        </div>
-                    </div>
-
-                    <!-- gallery item -->
-                    <div class="items interior theaters three-column mt-50">
-                        <div class="item-img bg-img" data-background="img/portfolio/mas/05.jpg">
-                            <a href="project-details2.html">
-                                <div class="item-img-overlay valign"></div>
-                            </a>
-                        </div>
-                        <div class="info mt-10">
-                            <h5>Creative Spaces</h5>
-                            <span>Interior Design</span>
-                        </div>
-                    </div>
-
-                    <!-- gallery item -->
-                    <div class="items interior three-column mt-50">
-                        <div class="item-img bg-img" data-background="img/portfolio/mas/06.jpg">
-                            <a href="project-details2.html">
-                                <div class="item-img-overlay valign"></div>
-                            </a>
-                        </div>
-                        <div class="info mt-10">
-                            <h5>Choose Your Dream</h5>
-                            <span>Architecture</span>
-                        </div>
-                    </div>
-
-                    <!-- gallery item -->
-                    <div class="items theaters three-column mt-50">
-                        <div class="item-img bg-img" data-background="img/portfolio/mas/07.jpg">
-                            <a href="project-details2.html">
-                                <div class="item-img-overlay"></div>
-                            </a>
-                        </div>
-                        <div class="info mt-10">
-                            <h5>Fantastic interior</h5>
-                            <span>Interior Design</span>
-                        </div>
-                    </div>
-
-                    <!-- gallery item -->
-                    <div class="items interior three-column mt-50">
-                        <div class="item-img bg-img" data-background="img/portfolio/mas/08.jpg">
-                            <a href="project-details2.html">
-                                <div class="item-img-overlay valign"></div>
-                            </a>
-                        </div>
-                        <div class="info mt-10">
-                            <h5>Choose Your Dream</h5>
-                            <span>Architecture</span>
-                        </div>
-                    </div>
-
-                    <!-- gallery item -->
-                    <div class="items residential three-column mt-50">
-                        <div class="item-img bg-img" data-background="img/portfolio/mas/09.jpg">
-                            <a href="project-details2.html">
-                                <div class="item-img-overlay valign"></div>
-                            </a>
-                        </div>
-                        <div class="info mt-10">
-                            <h5>Luxury Villa</h5>
-                            <span>Architecture</span>
-                        </div>
-                    </div>
-
-                    <!-- gallery item -->
-                    <div class="items interior theaters three-column mt-50">
-                        <div class="item-img bg-img" data-background="img/portfolio/mas/04.jpg">
-                            <a href="project-details2.html">
-                                <div class="item-img-overlay valign"></div>
-                            </a>
-                        </div>
-                        <div class="info mt-10">
-                            <h5>Creative Spaces</h5>
-                            <span>Interior Design</span>
-                        </div>
-                    </div>
-
-                    <!-- gallery item -->
-                    <div class="items residential three-column mt-50">
-                        <div class="item-img bg-img" data-background="img/portfolio/mas/03.jpg">
-                            <a href="project-details2.html">
-                                <div class="item-img-overlay valign"></div>
-                            </a>
-                        </div>
-                        <div class="info mt-10">
-                            <h5>Luxury Villa</h5>
-                            <span>Architecture</span>
-                        </div>
-                    </div>
-
-                    <!-- gallery item -->
-                    <div class="items interior theaters three-column mt-50">
-                        <div class="item-img bg-img" data-background="img/portfolio/mas/02.jpg">
-                            <a href="project-details2.html">
-                                <div class="item-img-overlay valign"></div>
-                            </a>
-                        </div>
-                        <div class="info mt-10">
-                            <h5>Creative Spaces</h5>
-                            <span>Interior Design</span>
-                        </div>
-                    </div>
-
+                    {% endfor %}
                 </div>
-
             </div>
         </div>
     </section>
+    
 
     <!-- ==================== End works ==================== -->
 

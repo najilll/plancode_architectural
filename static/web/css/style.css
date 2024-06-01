@@ -1,51 +1,3 @@
-/*-----------------------------------------------------------------------------------
-
-    Theme Name: Archo
-    Theme URI: http://
-    Description: Architecture & Interior Design HTML Template
-    Author: UI-ThemeZ
-    Author URI: http://themeforest.net/user/UI-ThemeZ
-    Version: 1.0
-
------------------------------------------------------------------------------------*/
-/* ----------------------------------------------------------------
-
-== Table Of Content
-
-    |--- BASE
-
-        |- typography
-        |- helper classes
-
-    |--- SHORTCODES
-
-        |- extra
-        |- overlay
-        |- section-heading
-        |- buttons
-        |- navbar
-        |- sliders
-        |- intro
-        |- feature-box
-        |- clients
-        |- counter
-        |- portfolio
-        |- process
-        |- progress-bar
-        |- tabs
-        |- team
-        |- testimonials
-        |- blog
-        |- contact-form
-        |- footers
-
-    |--- BASE
-
-        |- responsive
-	
-
-
----------------------------------------------------------------- */
 /* ====================== [ Start Typography  ] ====================== */
 * {
   margin: 0;
@@ -128,11 +80,12 @@ a, span {
   width: 100% !important; }
 
 .custom-font {
-  font-family: 'Teko', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: 400; }
 
 .playfont {
-  font-family: 'Playfair Display', serif; }
+  font-family: 'Poppins', sans-serif;
+}
 
 .main-color {
   color: #b19777 !important; }
@@ -774,7 +727,7 @@ a, span {
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   color: #b19777;
-  font-family: 'Teko', sans-serif;
+  font-family: 'Poppins', sans-serif;
   z-index: 9999; }
   .loading-text.isdone {
     top: 50%;
@@ -940,7 +893,7 @@ body {
 
 .progress-wrap::after {
   position: absolute;
-  font-family: 'Font Awesome 5 Free';
+  font-family: 'Poppins', sans-serif;
   content: '\f077';
   text-align: center;
   line-height: 44px;
@@ -1089,7 +1042,7 @@ body {
 
 .sub-title {
   color: #b19777;
-  font-family: 'Teko', sans-serif;
+  font-family: 'Poppins', sans-serif;
   text-transform: uppercase;
   font-weight: 400;
   font-size: 14px;
@@ -1138,7 +1091,7 @@ body {
   background: transparent;
   padding: 12px 35px;
   border: 1px solid #1e1e1e;
-  font-family: 'Teko', sans-serif;
+  font-family: 'Poppins', sans-serif;
   position: relative;
   overflow: hidden;
   cursor: pointer; }
@@ -1478,6 +1431,7 @@ body {
   .slider .caption.center h1 {
     font-size: 75px;
     font-weight: 700;
+    font-family: 'Poppins', sans-serif;
     line-height: 1.3;
     letter-spacing: 2px;
     margin-bottom: 20px; }
